@@ -12,12 +12,14 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>25</maven.compiler.release>
+    <paper.repo.host>repo.papermc.io</paper.repo.host>
+    <paper.repo.path>repository/maven-public/</paper.repo.path>
   </properties>
 
   <repositories>
     <repository>
       <id>papermc</id>
-      <url>https://papermc.io</url>
+      <url>https://${paper.repo.host}/${paper.repo.path}</url>
     </repository>
   </repositories>
 
