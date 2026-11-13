@@ -1,0 +1,73 @@
+# ModCheck - cau hinh
+# Plugin chi thay duoc nhung gi client de lo ra: client brand va cac plugin channel
+# ma mod dang ky. Mod chi chay o phia client thi khong thay duoc.
+
+prefix: '&4&lModCheck &8>>'
+
+# Dinh dang canh bao gui cho staff (quyen modcheck.alert).
+# Bien: %prefix% %player% %brand% %channels%
+alert-format: '%prefix% &f%player% &7dung client &c%brand% &7| kenh dang ngo: &c%channels%'
+
+# Cho bao nhieu tick sau khi vao server roi moi quet (20 tick = 1 giay).
+# Client can thoi gian de gui brand va dang ky kenh.
+scan-delay-ticks: 60
+
+# Bao khi client brand khong nam trong ignore-brands (vi du fabric, forge, lunarclient...).
+alert-on-unknown-brand: true
+
+# Client brand binh thuong, khong bao. Viet thuong.
+ignore-brands:
+  - vanilla
+
+# Kenh he thong, bo qua khi liet ke. Viet thuong.
+ignore-channels:
+  - minecraft:brand
+  - minecraft:register
+  - minecraft:unregister
+  - bungeecord:main
+
+# Neu ten kenh chua tu khoa nao duoi day thi bao cho staff. Viet thuong.
+alert-keywords:
+  - wdl
+  - xaero
+  - journeymap
+  - meteor
+  - wurst
+  - impact
+
+# Tu khoa trong ten kenh -> ten mod hien trong /mods.
+# Tu them hoac sua theo thuc te tren server cua ban.
+known-mods:
+  wdl: World Downloader
+  xaerominimap: Xaero's Minimap
+  xaeroworldmap: Xaero's World Map
+  journeymap: JourneyMap
+  voicechat: Simple Voice Chat
+  fabric: Fabric API
+  forge: Forge
+  neoforge: NeoForge
+  lunar: Lunar Client
+  badlion: Badlion Client
+
+# Tu dong ban khi nguoi choi vao server voi mod gian lan.
+# Nguoi co quyen modcheck.bypass (mac dinh la OP) khong bi ban.
+auto-ban:
+  enabled: true
+  # Lenh chay tu console. Bien: %player% %reason%
+  # Cu phap tempban nay dung duoc voi LiteBans, AdvancedBan, EssentialsX.
+  commands:
+    - 'tempban %player% 5m Unfair Advantage (Mod gian lan: %reason%)'
+  # Ban neu ten kenh chua tu khoa nay. Viet thuong.
+  ban-keywords:
+    - wdl
+    - meteor
+    - wurst
+    - impact
+  # Ban neu client brand chua tu khoa nay. Viet thuong.
+  ban-brands:
+    - meteor
+    - wurst
+    - impact
+    - aristois
+    - liquidbounce
+  staff-message: '%prefix% &f%player% &7bi ban &c5 phut &7vi dung mod gian lan: &c%reason%'

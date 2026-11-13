@@ -1,0 +1,23 @@
+name: ModCheck
+version: 1.0.0
+main: vn.modcheck.ModCheck
+api-version: '1.21'
+description: Xem client brand va doan mod nguoi choi dang cai qua cac plugin channel.
+commands:
+  mods:
+    description: Xem client brand va mod doan duoc cua nguoi choi
+    usage: /mods <nguoi choi|reload>
+    aliases: [modcheck]
+permissions:
+  modcheck.use:
+    description: Dung lenh /mods
+    default: op
+  modcheck.alert:
+    description: Nhan canh bao khi nguoi choi dung client/mod dang ngo
+    default: op
+  modcheck.bypass:
+    description: Khong bi ban tu dong boi ModCheck
+    default: op
+  modcheck.admin:
+    description: Dung /mods reload
+    default: op
