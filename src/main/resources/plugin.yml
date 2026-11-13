@@ -1,7 +1,7 @@
 name: ModCheck
 version: 1.0.0
 main: vn.modcheck.ModCheck
-api-version: '1.21'
+api-version: '26.1'
 description: Xem client brand va doan mod nguoi choi dang cai qua cac plugin channel.
 commands:
   mods:
